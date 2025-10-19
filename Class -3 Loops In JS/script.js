@@ -327,15 +327,97 @@ console.log('jai shree ram');
 
 
 
-//ye to normal sum ho gya esme 10 denge to 10 tak ki values sum ho jaygi lekin kya ho agar mai karu ki agar mai inpout do 2345 to mujhe output me chahiye 2+3+4+5 = 14 ye chahiye. 
-//ye nikalne ke liye ham 2345%10 se to last value 5 mil jaygi fir 2345/10 kar denge or math.floor kar denge to last value hat jaygi. ab jab loop dusri bar chalega tab bhi sem kam hoga or last me 0 bachega. to bas jo last value nikal rhi hai usi ko hame sum karna hai kam ho jayga.
+// //ye to normal sum ho gya esme 10 denge to 10 tak ki values sum ho jaygi lekin kya ho agar mai karu ki agar mai inpout do 2345 to mujhe output me chahiye 2+3+4+5 = 14 ye chahiye. 
+// //ye nikalne ke liye ham 2345%10 se to last value 5 mil jaygi fir 2345/10 kar denge or math.floor kar denge to last value hat jaygi. ab jab loop dusri bar chalega tab bhi sem kam hoga or last me 0 bachega. to bas jo last value nikal rhi hai usi ko hame sum karna hai kam ho jayga.
 
-let userInput = Number(prompt('Enter numebrs'));
-let Sum = 0;
+// let userInput = Number(prompt('Enter numebrs'));
+// let Sum = 0;
 
-while(userInput>0){//Yaha ham condition laga rhe hai ki user jabtak se bada hai tabtak chalo kyuki last me user 0 ho jayga.
-    let rem = userInput%10;//yah par ham mod karke last vlaue nikal rhe hai.
-    Sum += rem;//last value jo nikali hai use sum me sum kar rhe hai.
-    userInput = Math.floor(userInput/10);//user ne jo input diya hai use ham /10 kar rhe hai to jo last value bachegi use devide karne ke liye . me vlaue chali jaygi to use hatane ke liye ham floor kar de rhe hai to es vajaha se last value hat jaygi. or ye loop jabtak > hai 0  se tabtak chalega to hame nhi pata ki kabtak chalega.
-}
-console.log(Sum);//2345 = 14
+// while(userInput>0){//Yaha ham condition laga rhe hai ki user jabtak se bada hai tabtak chalo kyuki last me user 0 ho jayga.
+//     let rem = userInput%10;//yah par ham mod karke last vlaue nikal rhe hai.
+//     Sum += rem;//last value jo nikali hai use sum me sum kar rhe hai.
+//     userInput = Math.floor(userInput/10);//user ne jo input diya hai use ham /10 kar rhe hai to jo last value bachegi use devide karne ke liye . me vlaue chali jaygi to use hatane ke liye ham floor kar de rhe hai to es vajaha se last value hat jaygi. or ye loop jabtak > hai 0  se tabtak chalega to hame nhi pata ki kabtak chalega.
+// }
+// console.log(Sum);//2345 = 14
+
+
+
+
+//reverse number ---
+//logic -- kisi bhi number ko revers karne ke liye ham upar valal logic use karenge -- 
+//mana hamare pass 123 hai ok to sabse pahale hame 3 chahiye last value sabse pahale chaiye tabhi n ulta hoga -- to sabse pahale ham 123%10 karenge to hame last value mil jaygi 3 ab esmeham 10 se * karenge to ye ho jayga 30 10 se *  karna jaruri kyuki agar hame 2nd value eskme + karni hai lekin usase pahle hame 123 / 10 karna padega taki jo 3 hai vo hat jay. or jab 2nd value ko + kar denge to 32 ho jayga ok or value hogi 12 ab bas last 1 ko jodna hai hame to 12/10 karenge to bachega 1 jisko ham 32 me add karenge lekin direct add karenge to 33 ho jayga to direct add karne se pahale 32 ko ham 10 se firlse * karenge to 320 ho jayga ab ham usme 1 +  karenge to 321 ho jayga . to bas ho chuka uslta --- men piont hai 10 se multiply karna nhi karenge to reverse nhi hoga.
+
+//math exmaple --- 
+
+//1234 ko reverse karna hai --- 
+//1234%10 = 4 -- 4*10 = 40;
+//1234/10 = 123%10 = 3 + 40 = 43 -- 43*10 = 430;
+//123/10 = 12%10 = 2 + 430 = 432 -- 432*10 = 4320;
+//12/10 = 1 + 4320 = 4321 done ho gya reverse .
+
+//ab bas ese code me convert karna hai.
+
+
+// let n = Number(prompt('Enter number'));//1234
+// let nC = n;
+
+// let rev = 0;
+// while(n > 0){//last me condition false ho jaygi kyuki n 0  se bada nhi hai.
+//     let rem = n%10;//4, 3, 2, 1
+//     rev = rev*10+rem;//0*10 = 0 + 4 = 4, 4*10 = 40+3 = 43, 43*10 = 430+2 = 432, 432*10 = 4320+1 = 4321
+//     n = Math.floor(n/10);//123, 12, 1, 0
+// }
+// console.log(rev);//4321
+// if(nC === rev) console.log('Palindrome number');
+// else console.log('Not Palindrome number');
+
+
+
+
+
+// //Strong number -- Mana hamare pass 123 hai to ham 1 , 2 , 3 tino numbers ka factorial nikalenge or unke result ko add karenge agar results add karne par jo nuber hamne input liya tha 123 eske bar ho jata hai to vo ak stronge number hai.
+
+// let n = Number(prompt('enter numebr to find stronge number'));//123
+// let nCopy = n;
+// let Sum = 0;
+// while(n>0){
+//     let rem = n%10;//yaha par n ki last value nikalti rhegi jabtak 0 n ho jay.
+//     let factorial = 1;
+//     for(let i = 1; i <= rem; i++){//ye loop n ka jo last number nikalega vha tak chalega.or vha tak ki values ko *  karenga.
+//         factorial = factorial*i;
+//     }
+//     Sum += factorial;//yaha par sare numbers jo factorial nikalega sabko ham sum kar lenge.
+//     n = Math.floor(n/10);//yaha par n ki value - hote hote 0 tak pahuch jaygi.
+// }
+// if(nCopy === Sum) console.log("Stronge Number");
+// else console.log('Not Stronge number');
+
+// //yaha par ham nexted loops ka use kar rhe hai while loop number ko - kar rha hai or ak ak number ko nikalke for ko de rha hai for ko jo number mil rha hai for uska factorial nikal de rha hai. or sum karke sum me bhej de rha hai.
+// //1st time jab while loop chalega to for ko 3 dega for 3 ka factorial nikalega or factorial me dal dega fir sum us factorial value ko apne pass rakh lega aise hi jab 2nd time while chalega to for ko 2 dega for 2 ka factorial nikalega or sum ke pass jo pahale se factorial value hai usi me es 2nd value ko bhi add kar lega aise hi bari bari se sabka kam ho jayga.
+// //last me ham bas chak kar lenge ki n === sum hai ya nhi hai to strong number hai nhi to nhi hai. Lekin condition kam nhi karegi kyu? kyuki hamne while me n ko bar bari - karke n me hi vapas dala hai matlab n 0 ho chuka hoga to condition kam hi nhi karegi. to hame pahale hi n ki copy banake alag se rakhni hogi.yani n ki value ko uski copy me sambhal ke rakh denge or n ke sath jo marji vo karenge or bad n ki copy se conditin chack kara lenge.
+
+
+
+
+
+// do while loop ---- es looop me ham pahale do ko likhete hai do pahale chalta hai uske bad condition chack hogit hai matlab pahale do apna kam karega uske bad hi while chalega yani ye loop 1 bar jarur chalega.
+
+// //example --- 
+// do{
+//     console.log('hay');
+// }
+// while(12>14)//ye condition flase hai ye loop chalega hi nhi lekin ye do while loop esliye ye 1 bar jarur chalega eske upar jo do hai vo chalega to hey print hoga uske bad while loop terminate ho jayga.
+
+// // agar conditoin true hoti to ye normal loop ke jaise hi chalta;
+
+// let i = 1;
+// do{
+//     console.log('hay');
+//     i++
+// }while(i <= 10);//(10)hay -- print hoga.
+
+
+
+//HW Q1 -- repeat hello -- hame ak aisa program bana hai do while loop ka use karke ki jabtak user prompt me exit na likhe tabtak use hello dete rho.
+
+//HW Q2 -- Sasta calulator banana hai.
