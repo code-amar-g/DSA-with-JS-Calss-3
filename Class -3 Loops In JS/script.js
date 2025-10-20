@@ -420,4 +420,43 @@ console.log('jai shree ram');
 
 //HW Q1 -- repeat hello -- hame ak aisa program bana hai do while loop ka use karke ki jabtak user prompt me exit na likhe tabtak use hello dete rho.
 
+// let user = Number(prompt('Kuchh bhi likho (exit to close)'));
+// do{
+//     console.log('hello');
+//     prompt('Kuchh bhi likho (exit to close)');
+    
+// }while(user != 0);
+// //agar hame yaha par 1st time hi exit input dete hai to bhi ye ak bar hello print karege uske bad exit hoga
+
+
+//guease the number game --- computer 1 to 10 ke range me koe bhi number gueass karega uskohame gueass karna hai agar sahi bata dete hai to congratulation , agar chune huy number se kam banate hai to tolow agar chune huy number se jada batate ha to to hight bolna hai.
+
+let num = Math.floor(Math.random()*50+1);//ab 1 to 10 ke range me number generat ho rha hai or hame nhi pata abhi esne kya number generate kiya hai.
+let guess = -1;
+let atempt = 0;
+while(guess !== num){
+    atempt++
+    if(atempt === 6){
+        console.log('!Sorry your 5 atempts ended : Game Number was ',num);
+        break;
+    }
+    else {
+
+        guess = Number(prompt('Guess The Game Number 1 to 50'));
+        if(isNaN(guess) || guess < 1 || guess > 50){
+            console.log('Try Again b/w 1 - 100');
+            continue
+        }
+        
+        if(guess > num) console.log('too high try again');
+        else if(guess < num) console.log('too low try again');
+        else console.log('Congratulatin you guess the right number and number was ',guess , 'Atempt : ',atempt);
+        
+    }
+}
+
 //HW Q2 -- Sasta calulator banana hai.
+//hame 4 operation lene hai hame user se prompt me lena hai ki 1 dabne par + hongi values 2 dabane pr -  3 par * 4 par / hongi 2 valus ok to user esme se kuchh bhi le sakta ha firske bad user firse 2 values dega jo bhi usko karana hoga + - * / ok to ye logic hai.
+//last me puchhna hai ki kya aap firse program chalana chahate hai.
+
+
